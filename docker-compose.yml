@@ -8,7 +8,10 @@ services:
     env_file:
       - .env
     volumes:
-      # Mount bump-data.json for persistence across container restarts
-      - ./bump-data.json:/app/bump-data.json
+      # Use named volume for bump data persistence
+      - bump-data:/app
     environment:
       - NODE_ENV=production
+
+volumes:
+  bump-data:
