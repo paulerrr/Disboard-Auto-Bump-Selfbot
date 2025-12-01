@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  discord-bump-bot:
+    build: .
+    container_name: discord-bump-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # Mount bump-data.json for persistence across container restarts
+      - ./bump-data.json:/app/bump-data.json
+    environment:
+      - NODE_ENV=production

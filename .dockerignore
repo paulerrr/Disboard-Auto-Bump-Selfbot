@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Git
+.git/
+.gitignore
+
+# Environment files (will be handled via env_file in docker-compose)
+.env
+.env.example
+
+# Data files (will be mounted as volume)
+bump-data.json
+
+# Documentation
+README.md
+LICENSE
+
+# Docker files
+Dockerfile
+docker-compose.yml
+.dockerignore
